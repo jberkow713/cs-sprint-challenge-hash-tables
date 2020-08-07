@@ -5,22 +5,23 @@ def has_negatives(a):
     
     d = {}
     result = []
-
+    # take all the values greater than 0, add them to list 1
     for x in a:
         if x > 0:
             list_1.append(x)
-
+        #take numbers less than 0, multiply them by -1 and add them to list 1
         elif x < 0:
             y = (x *-1)
             list_1.append(y)
-    
+    #add all numbers in list 1 to a dictionary, key is number, value is count
     for x in list_1:
 
         if x not in d:
             d[x] = 0
 
         d[x] +=1   
-
+    # if value is >1, then it must have a negative clone, and so append that KEY to result
+    # return result
     for key, value in d.items():
         if value >1:
             result.append(key)         

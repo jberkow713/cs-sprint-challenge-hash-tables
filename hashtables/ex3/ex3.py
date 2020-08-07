@@ -11,15 +11,20 @@ def intersection(arrays):
     #almost = []
     result = []
     d = {}
+    #This scrolls through every value in every list, and appends it to this 
+    # pre-result array
     for lists in arrays:
         for values in lists:
             pre_result.append(values)
-
+    # this then takes the pre-result array, adds it to dictionary, count of each number == value
     for x in pre_result:
         if x not in d:
             d[x] = 0
 
         d[x] +=1
+    # This checks if the value equals the length of the arrays, 
+    # because the numbers can only appear, or do only appear in this case once per list
+    # then i append the key to result list, and return the key
     for key, value in d.items():
         if value == len(arrays):
             result.append(key)
