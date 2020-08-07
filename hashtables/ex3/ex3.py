@@ -3,6 +3,27 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
+        # want to find similar values within a list of lists
+    # have to scroll through all lists and append values 
+    # make a count of each value,
+    # return elements who have a count equal to length of all lists
+    pre_result = []
+    #almost = []
+    result = []
+    d = {}
+    for lists in arrays:
+        for values in lists:
+            pre_result.append(values)
+
+    for x in pre_result:
+        if x not in d:
+            d[x] = 0
+
+        d[x] +=1
+    for key, value in d.items():
+        if value == len(arrays):
+            result.append(key)
+
 
     return result
 
