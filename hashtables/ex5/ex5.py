@@ -23,22 +23,18 @@ def finder(files, queries):
     result3 = []
     #result4 = []
     
-    
+    # add full files to result 2
     for x in files:
         result2.append(x)
-    
+    #split end of filepath, add to result 3
     for x in files:
         x2 = x.rsplit('/', 1)[-1] 
         result3.append(x2)  
+    #create dictionary with full filepaths as key, and ending of filepaths as value
 
     d = {key: value for key, value in zip(result2, result3)} 
 
-    #for x in queries:
-    #    result4.append(x)
-    # so now we have a dictionary with full filepath, and ending of filepath
-    # want to iterate through queries and match up queries with 
-    # value in dictionary. If matches, return that correlating key to result 
-    # array, and return array
+    #scroll through keys and values in dictionary, if value = query, append the key
     
     for k,v in d.items():
         for x in queries:
